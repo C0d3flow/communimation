@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build OpenGL Project",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17", 
+                "-g", 
+                "-I${workspaceFolder}/include",
+                "-L${workspaceFolder}/lib",
+                "${workspaceFolder}/src/*.cpp",
+                "${workspaceFolder}/src/glad.c",  
+                "-lglfw3dll",
+                "-o",
+                "${workspaceFolder}/test.exe"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
+    ]
+}
